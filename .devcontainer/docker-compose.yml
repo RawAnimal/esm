@@ -54,6 +54,9 @@ services:
       - db
     env_file:
       - ".env"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: 'admin@admin.com'
+      PGADMIN_DEFAULT_PASSWORD: 'postgres'
 
 volumes:
   postgres-data:
