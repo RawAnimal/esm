@@ -1,6 +1,4 @@
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework import status, viewsets
+from rest_framework.viewsets import ModelViewSet
 
 from .models import Client, Project, ProjectClients
 from .serializers import (
@@ -10,7 +8,7 @@ from .serializers import (
 )
 
 
-class ClientViewSet(viewsets.ModelViewSet):
+class ClientViewSet(ModelViewSet):
     """
     Endpoint for viewing and editing clients.
     """
@@ -19,7 +17,7 @@ class ClientViewSet(viewsets.ModelViewSet):
     serializer_class = ClientSerializer
 
 
-class ProjectViewSet(viewsets.ModelViewSet):
+class ProjectViewSet(ModelViewSet):
     """
     Endpoint for viewing and editing projects.
     """
@@ -28,7 +26,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
 
 
-class ProjectClientsViewSet(viewsets.ModelViewSet):
+class ProjectClientsViewSet(ModelViewSet):
     """
     Endpoint for viewing and editing clients associated with projects.
     """
