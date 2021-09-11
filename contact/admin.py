@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from contact import models
+
+admin.site.register(models.Country)
+admin.site.register(models.Province)
+admin.site.register(models.City)
