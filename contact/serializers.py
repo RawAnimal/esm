@@ -10,12 +10,16 @@ class CountrySerializer(serializers.ModelSerializer):
 
 
 class ProvinceSerializer(serializers.ModelSerializer):
+    country = serializers.StringRelatedField()
+
     class Meta:
         model = Province
-        fields = "__all__"
+        fields = ["name", "abbr", "country"]
 
 
 class CitySerializer(serializers.ModelSerializer):
+    province = serializers.StringRelatedField()
+
     class Meta:
         model = City
-        fields = "__all__"
+        fields = ["name", "province"]

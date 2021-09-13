@@ -29,7 +29,7 @@ class Province(models.Model):
         verbose_name_plural = "Provinces"
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.name} {self.country.abbr}"
 
 
 class City(models.Model):
@@ -45,4 +45,4 @@ class City(models.Model):
         verbose_name_plural = "Cities"
 
     def __str__(self) -> str:
-        return self.name + " " + self.province.abbr
+        return f"{self.name} {self.province.abbr}"
