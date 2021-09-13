@@ -1,4 +1,5 @@
 from django.db import models
+from contact.models import City
 
 # from django.utils import timezone
 
@@ -20,6 +21,12 @@ class Client(models.Model):
 class Project(models.Model):
     temp_name = models.CharField(max_length=30)
     clients = models.ManyToManyField("Client", through="ProjectClients")
+    project_city = models.ForeignKey(
+        City,
+        on_delete=models.PROTECT,
+        related_name="project_city",
+        verbose_name="City",
+    )
 
     class Meta:
         db_table = "projects"

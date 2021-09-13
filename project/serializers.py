@@ -11,10 +11,11 @@ class ProjectClientsSerializer(serializers.ModelSerializer):
 
 class ProjectSerializer(serializers.ModelSerializer):
     clients = serializers.StringRelatedField(many=True)
+    project_city = serializers.StringRelatedField()
 
     class Meta:
         model = Project
-        fields = ["temp_name", "clients"]
+        fields = ["temp_name", "clients", "project_city"]
 
 
 class ClientSerializer(serializers.ModelSerializer):
